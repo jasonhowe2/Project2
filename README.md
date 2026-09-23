@@ -78,3 +78,35 @@ OpenAI ChatGPT (GPT-5.6 Luna) was used to assist with project planning, research
 
 ## Assignment Coverage
 The repository includes the major Project 2 requirements: problem definition, background/context, data description, exploratory analysis, feature selection, preprocessing, chronological train/test strategy, baseline, multiple models, model comparison, evaluation metrics, model interpretation/error analysis, limitations/ethics, and AI/code transparency.
+
+
+## Rubric Coverage
+
+| Requirement | Where it is addressed |
+|---|---|
+| 1. Published Portfolio Project | Project 02 is published on the personal portfolio as `project2.html`. |
+| 2. ML Problem & Dataset | Notebook sections 1–3 and the Project 02 portfolio page define the regression target, unit of analysis, features, dataset, and sample size. |
+| 3. Context & Supporting Research | Notebook/background section and portfolio page include three cited credible sources. |
+| 4. Data Preparation | Feature engineering, missing-value handling, rate transformations, and KNN scaling are documented in the notebook. |
+| 5. Data Understanding & Feature Selection | Summary statistics, scatterplots, correlations, and feature-group rationale are included. |
+| 6. Training & Testing Strategy | Chronological 2000–2022 training / 2023–2025 testing split is documented. |
+| 7. Baseline Performance | Mean-training-wins baseline is calculated and evaluated with MAE, RMSE, and R². |
+| 8. Model Development & Comparison | Linear Regression and KNN Regression are compared across three feature sets. |
+| 9. Model Evaluation | MAE, RMSE, and R² are defined, reported, and used for comparison. |
+| 10. Model Interpretation | Actual-vs-predicted analysis, linear coefficients, and largest-error analysis are included. |
+| 11. Ethics & Limitations | Limitations, uncertainty, omitted variables, consequences of errors, and real-world use are discussed. |
+| 12. Code & AI Transparency | Repository, notebook, data source, and AI-use disclosure are documented. |
+
+## Portfolio
+
+**Project 02 portfolio page:** https://jasonhowe2.github.io/Personal-Portfolio-Project/project2.html
+
+**Portfolio homepage:** https://jasonhowe2.github.io/Personal-Portfolio-Project/
+
+## Distinction-Focused Work
+
+- Clear project-page hierarchy and responsive portfolio design.
+- Multiple exploratory visualizations plus actual-vs-predicted analysis.
+- Direct comparison of feature groups and two model families.
+- Chronological holdout design to reflect unseen future seasons.
+- Error analysis and discussion of omitted baseball factors.
