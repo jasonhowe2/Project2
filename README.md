@@ -36,12 +36,18 @@ The project compares:
 
 ## Method
 The project uses a chronological train/test split:
-- **Training:** 2000–2022
-- **Testing:** 2023–2025
+- **Training:** 2000–2022 (690 team-season records)
+- **Testing:** 2023–2025 (90 team-season records)
 
-A chronological split was selected so the final seasons are genuinely unseen during model training and to reduce temporal leakage.
+A chronological split was selected so the final seasons are genuinely unseen during model training and to reduce temporal leakage. The model uses season-level statistics from the same season as the win total, so this should be interpreted as **contemporaneous predictive modeling**, not a pre-season forecast.
 
 KNN uses standardization because it is distance-based. The project establishes a mean-wins baseline and compares models using MAE, RMSE, and R².
+
+### Data-quality checks
+The selected Lahman records for 2000–2025 contain **0 missing values** in the raw variables needed for the engineered features and **0 duplicate team-season keys**. Because this is a regression problem, class imbalance is not applicable. Summary statistics and scatterplots are used to investigate unusual distributions and potential outliers. The 2020 season is specifically noted as a limitation because MLB played a shortened schedule.
+
+## Baseline Performance
+The baseline predicts the mean training-set win total (**78.75 wins**) for every team in the 2023–2025 test set. On the held-out test set, the baseline has **MAE = 9.77, RMSE = 12.44, and R² = -0.033**. The negative R² is expected for a baseline that is weaker than the variation in the test outcomes. The machine-learning models are therefore compared against this simple reference.
 
 ## Results
 Held-out test results:
@@ -58,10 +64,12 @@ Held-out test results:
 The combined KNN model produced the strongest held-out performance among the tested models. Pitching/run prevention performed somewhat better than the selected hitting variables when the groups were considered separately.
 
 ## Interpretation
-The results suggest that both run creation and run prevention provide useful predictive information about team wins. The project does **not** establish that pitching or hitting causes wins; it evaluates predictive performance using the selected statistics and seasons.
+The results suggest that both run creation and run prevention provide useful predictive information about team wins. The combined KNN model improves substantially on the mean-wins baseline, but the project does **not** establish that pitching or hitting causes wins; it evaluates predictive performance using the selected statistics and seasons.
+
+Because this is regression, the project does not use the terms **false positive** and **false negative**. Instead, prediction errors are described as **overpredictions** (predicted wins are too high) or **underpredictions** (predicted wins are too low). Large errors could matter if a similar model were used for roster, financial, operational, or betting decisions.
 
 ## Limitations
-The model does not include every factor that can affect wins, including defense, baserunning, injuries, roster construction, payroll, strength of schedule, park effects, and bullpen usage. The test period contains only three seasons, so performance may differ on another time period.
+The model does not include every factor that can affect wins, including defense, baserunning, injuries, roster construction, payroll, strength of schedule, park effects, and bullpen usage. The test period contains only three seasons, so performance may differ on another time period. The 2020 shortened season also makes raw win totals less directly comparable across the full study period. Finally, because the predictors and target come from the same season, the model should not be presented as a pre-season forecasting system.
 
 ## Repository Files
 - `Project2_MLB_Hitting_vs_Pitching.ipynb` — complete end-to-end Jupyter Notebook
