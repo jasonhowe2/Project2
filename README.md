@@ -124,7 +124,9 @@ The notebook reports Logistic Regression coefficients, Decision Tree feature imp
 
 ## AI / Code Transparency
 
-OpenAI ChatGPT (GPT-5.6 Luna) was used to assist with project planning, research-question refinement, code structure, model setup, interpretation, and written explanations. The student is responsible for reviewing and understanding the submitted code and following course AI-use requirements.
+**Data:** SABR Lahman Baseball Database, 2025 release, Teams table.
+
+**Generative AI disclosure:** ChatGPT (GPT-5.6 Luna) was used to help formulate the research question, organize the project structure, draft explanatory text, and assist with Python code. The final analysis, model results, and interpretation were reviewed in the notebook.
 
 ## Rubric Coverage
 
